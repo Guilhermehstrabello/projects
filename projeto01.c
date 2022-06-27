@@ -3,7 +3,8 @@
 
 void calc()
 {
-    float num1, num2;
+    setlocale(LC_ALL,"Portuguese");
+	float num1, num2;
 	int op;
     do
     {
@@ -22,23 +23,23 @@ void calc()
 	scanf("%f %f", &num1, &num2);
 	switch(op)
 	    {
-		    case '+':
+		    case 1:
 			    printf("A sua soma é: %.2f \n", num1+num2);
 			    break;
 			
-		    case '-':
+		    case 2:
 			    printf("A sua subtração é: %.2f \n", num1-num2);
 			    break;
 			
-		    case '*':
+		    case 3:
 			    printf("A sua multiplicação é: %.2f \n", num1*num2);
 			    break;
 			
-		    case '/':
+		    case 4:
 			    printf("A sua divisão é: %.2f \n", num1/num2);
 			    break;
         
-            case '0':
+            case 0:
                 printf("Obrigado por usar nossa calculadora!!");
                 break;
 		
@@ -49,23 +50,24 @@ void calc()
     }while (op!=0);
 }
 
-
 main()
 {
-    int op1;
+	setlocale(LC_ALL,"Portuguese");
+	int op1;
+	char ops;
     printf("|------------------------------------------|\n");
 	printf("|---Qual programa você deseja usar?--------|\n");
- 	printf("|---[1]Calculadora-------------------------|\n");
- 	printf("|---[2]Calculo de IMC----------------------|\n");
- 	printf("|---[3]Calculo de média--------------------|\n");
+ 	printf("|---[Q]Calculadora-------------------------|\n");
+ 	printf("|---[W]Calculo de IMC----------------------|\n");
+ 	printf("|---[E]Calculo de média--------------------|\n");
  	printf("|---[0]Fechar------------------------------|\n");
     printf("|------------------------------------------|\n");
     printf(":");   
-    scanf("%d", &op1);
+    scanf("%c", &ops);
 
-    switch (op1)
+    switch (ops)
     {
-    case '1':
+    case 'Q':
         calc();
         break;
     
