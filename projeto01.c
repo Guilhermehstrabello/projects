@@ -50,24 +50,23 @@ void calc()
     }while (op!=0);
 }
 
-main()
+int main()
 {
 	setlocale(LC_ALL,"Portuguese");
 	int op1;
-	char ops;
     printf("|------------------------------------------|\n");
 	printf("|---Qual programa você deseja usar?--------|\n");
- 	printf("|---[Q]Calculadora-------------------------|\n");
- 	printf("|---[W]Calculo de IMC----------------------|\n");
- 	printf("|---[E]Calculo de média--------------------|\n");
+ 	printf("|---[1]Calculadora-------------------------|\n");
+ 	printf("|---[2]Calculo de IMC----------------------|\n");
+ 	printf("|---[3]Calculo de média--------------------|\n");
  	printf("|---[0]Fechar------------------------------|\n");
     printf("|------------------------------------------|\n");
     printf(":");   
-    scanf("%c", &ops);
+    scanf("%d", &op1);
 
-    switch (ops)
+    switch (op1)
     {
-    case 'Q':
+    case 1:
         calc();
         break;
     
