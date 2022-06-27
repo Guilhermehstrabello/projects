@@ -54,25 +54,35 @@ int main()
 {
 	setlocale(LC_ALL,"Portuguese");
 	int op1;
-    printf("|------------------------------------------|\n");
-	printf("|---Qual programa você deseja usar?--------|\n");
- 	printf("|---[1]Calculadora-------------------------|\n");
- 	printf("|---[2]Calculo de IMC----------------------|\n");
- 	printf("|---[3]Calculo de média--------------------|\n");
- 	printf("|---[0]Fechar------------------------------|\n");
-    printf("|------------------------------------------|\n");
-    printf(":");   
-    scanf("%d", &op1);
+	do
+	{
+		printf("|------------------------------------------|\n");
+		printf("|---Qual programa você deseja usar?--------|\n");
+		printf("|---[1]Calculadora-------------------------|\n");
+		printf("|---[2]Calculo de IMC----------------------|\n");
+		printf("|---[3]Calculo de média--------------------|\n");
+		printf("|---[0]Fechar------------------------------|\n");
+		printf("|------------------------------------------|\n");
+		printf(":");   
+		scanf("%d", &op1);
 
-    switch (op1)
-    {
-    case 1:
-        calc();
-        break;
-    
-    default:
-        break;
-    }
-    
+    	switch (op1)
+    	{
+    	case 1:
+        	calc();
+        	break;
+		case 2:
+
+			break;
+		case 3:
+
+			break;
+		case 0:
+			printf ("Obrigado por utilizar nosso programa!!");
+			break;
+    	default:
+			printf("Opção inválida!");
+    	}
     return 0;
+	} while (op1!=0);
 }
