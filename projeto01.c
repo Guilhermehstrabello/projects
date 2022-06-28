@@ -6,10 +6,8 @@ void calc() //Calculadora
     setlocale(LC_ALL,"Portuguese");
 	float num1, num2;
 	int op;
-    do
-    {
     printf("|----------------------------------|\n"); // Não funciona o voltar e fechar, precisa de update
-	printf("|---Escolha uma operação-----------|\n");
+	printf("|---Qual operação deseja?----------|\n");
  	printf("|[1]Adição-------------------------|\n");
  	printf("|[2]Subtração----------------------|\n");
  	printf("|[3]Multiplicação------------------|\n");
@@ -18,34 +16,29 @@ void calc() //Calculadora
     printf("|----------------------------------|\n");
  	
  	printf(":");
-	scanf(" %d", &op);
+	scanf("%i",&op);
+
 	printf("Digite os números: \n");
 	scanf("%f %f", &num1, &num2);
-	switch(op)
-	    {
-		    case 1:
-			    printf("A sua soma é: %.2f \n\n", num1+num2);
-			    break;
-			
-		    case 2:
-			    printf("A sua subtração é: %.2f \n\n", num1-num2);
-			    break;
-			
-		    case 3:
-			    printf("A sua multiplicação é: %.2f \n\n", num1*num2);
-			    break;
-			
-		    case 4:
-			    printf("A sua divisão é: %.2f \n\n", num1/num2);
-			    break;
-		
-            case 0:
-				main();
-			default:
-				printf("Opção inválida!");
-		}
-		return 0;
-    }while (op!=0);
+	switch (op)
+	{
+		case 1:
+		    printf("A sua soma é: %.2f \n\n", num1+num2);
+		break;
+	    case 2:
+		    printf("A sua subtração é: %.2f \n\n", num1-num2);		    
+		break;
+	    case 3:
+		    printf("A sua multiplicação é: %.2f \n\n", num1*num2);			   
+		break;
+	    case 4:
+		    printf("A sua divisão é: %.2f \n\n", num1/num2);
+		break;
+		case 0:
+			main();
+		default:
+			printf("Opção inválida!");
+	}
 }
 
 void imc() //Cálculo de IMC
@@ -89,6 +82,7 @@ void imc() //Cálculo de IMC
 		main();
 	default:
 		printf("Opção inválida!");
+		break;
 	}
 }
 
@@ -162,6 +156,5 @@ int main() //Função principal
     	default:
 			printf("Opção inválida!");
     	}
-    return 0;
 	} while (op1!=0);
 }
