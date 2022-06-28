@@ -51,15 +51,15 @@ void calc() //Calculadora
 void imc() //Cálculo de IMC
 {
 	float peso, altura, imc;
-	int op;
+	int op2;
 	printf("|-------------------------------------|\n");
 	printf("|-----------Cálculo de IMC------------|\n");
 	printf("|-----------[1]Continuar--------------|\n");
 	printf("|-----------[0]Voltar-----------------|\n");
 	printf("|-------------------------------------|\n");
 	printf(":");
-	scanf("%d", &op);
-	switch (op)
+	scanf("%d", &op2);
+	switch (op2)
 	{
 	case 1:
 		printf("Informe o seu peso:");
@@ -94,13 +94,38 @@ void imc() //Cálculo de IMC
 
 void med() // Colocar a média conforme a quantidade de alunos
 {
-	float n1, n2, n3, media;
-	printf("Digite as 3 notas do aluno: \n");
-	scanf("%f %f %f", &n1, &n2, &n3);
-	media= (n1+ n2+ n3)/3;
-	printf("A média do aluno é: %.2f\n",media);
-	
-	return 0;
+	float notas, mediaA;
+	int i=1,op3;
+	int alunos;
+	printf("|-------------------------------------|\n");
+	printf("|-----------Cálculo de Média----------|\n");
+	printf("|-----------[1]Continuar--------------|\n");
+	printf("|-----------[0]Voltar-----------------|\n");
+	printf("|-------------------------------------|\n");
+	printf(":");
+	scanf("%d", &op3);
+
+	switch (op3)
+	{
+	case 1:
+		printf("Informe o número de alunos:\n");
+		scanf("%d", &alunos);
+		while (i<=alunos)
+		{
+			printf("\n\nDigite a nota do %d º aluno:\n", i);
+			scanf("%f", &notas);
+			mediaA += notas/alunos;
+			i++;
+		}
+		printf("A média da sala é = %.2f ",mediaA);
+	break;
+
+	case 0:
+		main();
+	default:
+		printf("Opção inválida!");
+		break;
+	}
 }
 
 
