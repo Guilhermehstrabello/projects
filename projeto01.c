@@ -1,12 +1,16 @@
 #include<stdio.h>
 #include<locale.h>
+#include<windows.h>
 
 void calc() //Calculadora 
 {
     setlocale(LC_ALL,"Portuguese");
 	int op2=0;
 	float num1, num2;
-    printf("|----------------------------------|\n"); // Não funciona o voltar e fechar, precisa de update
+	do
+	{
+	system("cls");
+	printf("|----------------------------------|\n"); // Não funciona o voltar e fechar, precisa de update
 	printf("|---Escolha uma operação abaixo----|\n");
  	printf("|[1]Adição-------------------------|\n");
  	printf("|[2]Subtração----------------------|\n");
@@ -19,21 +23,25 @@ void calc() //Calculadora
 	switch (op2)
 	{
 		case 1:
+			system("cls");
 			printf("Digite os números:\n");
 			scanf("%f %f", &num1, &num2);
 		    printf("%.2f + %.2f = %.2f \n",num1, num2, num1+num2);
 		break;
 	    case 2:
+			system("cls");
 			printf("Digite os números:\n");
 			scanf("%f %f", &num1, &num2);
 		    printf("%.2f - %.2f = %.2f \n",num1, num2, num1-num2);	    
 		break;
 	    case 3:
+			system("cls");
 		    printf("Digite os números:\n");
 			scanf("%f %f", &num1, &num2);
 		    printf("%.2f * %.2f = %.2f \n",num1, num2, num1*num2);			   
 		break;
 	    case 4:
+			system("cls");
 		    printf("Digite os números:\n");
 			scanf("%f %f", &num1, &num2);
 		    printf("%.2f / %.2f = %.2f \n",num1, num2, num1/num2);
@@ -42,7 +50,8 @@ void calc() //Calculadora
 			main();
 		default:
 			printf("Opção inválida!");
-	}
+	}system("pause");
+	} while (op2!=5);
 }
 
 void imc() //Cálculo de IMC
@@ -95,6 +104,9 @@ void med() // Colocar a média conforme a quantidade de alunos
 	float notas, mediaA;
 	int i=1,op4=0;
 	int alunos;
+	do
+	{
+	system("cls");
 	printf("|-------------------------------------|\n");
 	printf("|-----------Cálculo de Média----------|\n");
 	printf("|-----------[1]Continuar--------------|\n");
@@ -124,6 +136,7 @@ void med() // Colocar a média conforme a quantidade de alunos
 	default:
 		printf("Opção inválida!");
 	}
+	}while (op4!=2);
 }
 
 
@@ -133,6 +146,7 @@ int main() //Função principal
 	int op1=0;
 	do
 	{
+		system("cls");
 		printf("|------------------------------------------|\n");
 		printf("|---Qual programa você deseja usar?--------|\n");
 		printf("|---[1]Calculadora-------------------------|\n");
@@ -140,7 +154,7 @@ int main() //Função principal
 		printf("|---[3]Calculo de média--------------------|\n");
 		printf("|---[4]Fechar------------------------------|\n");
 		printf("|------------------------------------------|\n");
-		printf(":");   
+		printf(":");
 		scanf("%d", &op1);
     	switch (op1)
     	{
@@ -154,10 +168,10 @@ int main() //Função principal
 			med();
 			break;
 		case 4:
-			printf("Obrigado por utilizar nosso programa!!");
+			printf("Obrigado por utilizar o meu programinha!!");
 			break;
     	default:
 			printf("Opção inválida!");
-    	}
+    	}system("pause");
 	} while (op1!=4);
 }
