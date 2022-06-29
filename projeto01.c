@@ -23,25 +23,21 @@ void calc() //Calculadora
 	switch (op2)
 	{
 		case 1:
-			system("cls");
 			printf("Digite os números:\n");
 			scanf("%f %f", &num1, &num2);
 		    printf("%.2f + %.2f = %.2f \n",num1, num2, num1+num2);
 		break;
 	    case 2:
-			system("cls");
 			printf("Digite os números:\n");
 			scanf("%f %f", &num1, &num2);
 		    printf("%.2f - %.2f = %.2f \n",num1, num2, num1-num2);	    
 		break;
 	    case 3:
-			system("cls");
 		    printf("Digite os números:\n");
 			scanf("%f %f", &num1, &num2);
 		    printf("%.2f * %.2f = %.2f \n",num1, num2, num1*num2);			   
 		break;
 	    case 4:
-			system("cls");
 		    printf("Digite os números:\n");
 			scanf("%f %f", &num1, &num2);
 		    printf("%.2f / %.2f = %.2f \n",num1, num2, num1/num2);
@@ -50,8 +46,9 @@ void calc() //Calculadora
 			main();
 		default:
 			printf("Opção inválida!");
-	}system("pause");
-	} while (op2!=5);
+	}
+	}while (op2!=5);
+	system("pause");
 }
 
 void imc() //Cálculo de IMC
@@ -67,35 +64,34 @@ void imc() //Cálculo de IMC
 	scanf("%d", &op3);
 	switch (op3)
 	{
-	case 1:
-		printf("Informe o seu peso:");
-		scanf("%f",&peso);
-		
-		printf("Agora informe sua altura:");
-		scanf("%f", &altura);
-		
-		imc= peso/(altura*altura);
-		printf("O seu IMC é: %.2f ",imc);
-		
-		if(imc<18.5){
-			printf("\nAbaixo do peso!\n");
-		}
-		else if (imc>=18.5 && imc<25){
-			printf("\nPeso normal!\n");
-		}
-		else if (imc>=25 && imc<=30){
-			printf("\nAcima do peso!\n");
-		}
-		else{
-			printf("\nObeso!\n");
-		}
-		break;
-
-	case 2:
-		main();
-	default:
-		printf("Opção inválida!");
-		break;
+		case 1:
+			printf("Informe o seu peso:");
+			scanf("%f",&peso);
+			
+			printf("Agora informe sua altura:");
+			scanf("%f", &altura);
+			
+			imc= peso/(altura*altura);
+			printf("O seu IMC é: %.2f ",imc);
+			
+			if(imc<18.5){
+				printf("\nAbaixo do peso!\n");
+			}
+			else if (imc>=18.5 && imc<25){
+				printf("\nPeso normal!\n");
+			}
+			else if (imc>=25 && imc<=30){
+				printf("\nAcima do peso!\n");
+			}
+			else{
+				printf("\nObeso!\n");
+			}
+			break;
+		case 2:
+			main();
+		default:
+				printf("Opção inválida!");
+			break;
 	}
 }
 
@@ -106,36 +102,36 @@ void med() // Colocar a média conforme a quantidade de alunos
 	int alunos;
 	do
 	{
-	system("cls");
-	printf("|-------------------------------------|\n");
-	printf("|-----------Cálculo de Média----------|\n");
-	printf("|-----------[1]Continuar--------------|\n");
-	printf("|-----------[2]Voltar-----------------|\n");
-	printf("|-------------------------------------|\n");
-	printf(":");
-	scanf("%d", &op4);
+		system("cls");
+		printf("|-------------------------------------|\n");
+		printf("|-----------Cálculo de Média----------|\n");
+		printf("|-----------[1]Continuar--------------|\n");
+		printf("|-----------[2]Voltar-----------------|\n");
+		printf("|-------------------------------------|\n");
+		printf(":");
+		scanf("%d", &op4);
 
-	switch (op4)
-	{
-	case 1:
-		printf("Informe o número de alunos:\n");
-		scanf("%d", &alunos);
-		while (i<=alunos)
+		switch (op4)
 		{
-			printf("\n\nDigite a nota do %d º aluno:\n", i);
-			scanf("%f", &notas);
-			mediaA += notas/alunos;
-			i++;
-		}
-		printf("A média da sala é = %.2f ",mediaA);
-	break;
-
-	case 2:
-		main();
+		case 1:
+			printf("Informe o número de alunos:\n");
+			scanf("%d", &alunos);
+			while (i<=alunos)
+			{
+				printf("\n\nDigite a nota do %d º aluno:\n", i);
+				scanf("%f", &notas);
+				mediaA += notas/alunos;
+				i++;
+			}
+			printf("A média da sala é = %.2f ",mediaA);
 		break;
-	default:
-		printf("Opção inválida!");
-	}
+
+		case 2:
+			main();
+			break;
+		default:
+			printf("Opção inválida!");
+		}
 	}while (op4!=2);
 }
 
@@ -159,6 +155,7 @@ int main() //Função principal
     	switch (op1)
     	{
     	case 1:
+			system("cls");
         	calc();
         	break;
 		case 2:
@@ -168,10 +165,12 @@ int main() //Função principal
 			med();
 			break;
 		case 4:
-			printf("Obrigado por utilizar o meu programinha!!");
+			printf("Obrigado por utilizar o meu programinha!!\n");
 			break;
     	default:
 			printf("Opção inválida!");
-    	}system("pause");
+			break;
+    	}
 	} while (op1!=4);
+system("Pause");
 }
