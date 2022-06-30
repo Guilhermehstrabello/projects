@@ -10,7 +10,7 @@ void calc() //Calculadora
 	do
 	{
 	system("cls");
-	printf("|----------------------------------|\n"); // Não funciona o voltar e fechar, precisa de update
+	printf("|----------------------------------|\n");
 	printf("|---Escolha uma operação abaixo----|\n");
  	printf("|[1]Adição-------------------------|\n");
  	printf("|[2]Subtração----------------------|\n");
@@ -46,15 +46,15 @@ void calc() //Calculadora
 			main();
 		default:
 			printf("Opção inválida!");
-	}
+	}system("pause");	
 	}while (op2!=5);
-	system("pause");
 }
 
 void imc() //Cálculo de IMC
 {
 	float peso, altura, imc;
 	int op3=0;
+	system("cls");
 	printf("|-------------------------------------|\n");
 	printf("|-----------Cálculo de IMC------------|\n");
 	printf("|-----------[1]Continuar--------------|\n");
@@ -93,15 +93,14 @@ void imc() //Cálculo de IMC
 				printf("Opção inválida!");
 			break;
 	}
+	system("Pause");
 }
 
-void med() // Colocar a média conforme a quantidade de alunos
+void med()
 {
 	float notas, mediaA;
 	int i=1,op4=0;
 	int alunos;
-	do
-	{
 		system("cls");
 		printf("|-------------------------------------|\n");
 		printf("|-----------Cálculo de Média----------|\n");
@@ -125,37 +124,32 @@ void med() // Colocar a média conforme a quantidade de alunos
 			}
 			printf("A média da sala é = %.2f ",mediaA);
 		break;
-
 		case 2:
 			main();
 			break;
 		default:
 			printf("Opção inválida!");
-		}
-	}while (op4!=2);
+		}system("Pause");
 }
-
 
 int main() //Função principal
 {
 	setlocale(LC_ALL,"Portuguese");
-	int op1=0;
-	do
-	{
+	int prog=0;
+
 		system("cls");
 		printf("|------------------------------------------|\n");
 		printf("|---Qual programa você deseja usar?--------|\n");
 		printf("|---[1]Calculadora-------------------------|\n");
 		printf("|---[2]Calculo de IMC----------------------|\n");
-		printf("|---[3]Calculo de média--------------------|\n");
+		printf("|---[3]Calculo de média da sala------------|\n");
 		printf("|---[4]Fechar------------------------------|\n");
 		printf("|------------------------------------------|\n");
 		printf(":");
-		scanf("%d", &op1);
-    	switch (op1)
+		scanf("%d", &prog);
+    	switch (prog)
     	{
     	case 1:
-			system("cls");
         	calc();
         	break;
 		case 2:
@@ -166,11 +160,10 @@ int main() //Função principal
 			break;
 		case 4:
 			printf("Obrigado por utilizar o meu programinha!!\n");
+			system("Pause");
 			break;
     	default:
 			printf("Opção inválida!");
 			break;
     	}
-	} while (op1!=4);
-system("Pause");
 }
