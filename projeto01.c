@@ -87,6 +87,7 @@ void imc() //Cálculo de IMC
 			break;
 		case 2:
 			main();
+			break;
 		default:
 				printf("Opção inválida!");
 			break;
@@ -120,7 +121,7 @@ void med()
 				mediaA += notas/alunos;
 				i++;
 			}
-			printf("A média da sala é = %.2f ",mediaA);
+			printf("A média da sala é = %.2f\n",mediaA);
 		break;
 		case 2:
 			main();
