@@ -7,8 +7,6 @@ void calc() //Calculadora
     setlocale(LC_ALL,"Portuguese");
 	int op2=0;
 	float num1, num2;
-	do
-	{
 	system("cls");
 	printf("|----------------------------------|\n");
 	printf("|---Escolha uma operação abaixo----|\n");
@@ -46,8 +44,8 @@ void calc() //Calculadora
 			main();
 		default:
 			printf("Opção inválida!");
-	}system("pause");	
-	}while (op2!=5);
+	}system("Pause");
+	main();
 }
 
 void imc() //Cálculo de IMC
@@ -65,10 +63,10 @@ void imc() //Cálculo de IMC
 	switch (op3)
 	{
 		case 1:
-			printf("Informe o seu peso:");
+			printf("Informe o seu peso:\n");
 			scanf("%f",&peso);
 			
-			printf("Agora informe sua altura:");
+			printf("Agora informe sua altura:\n");
 			scanf("%f", &altura);
 			
 			imc= peso/(altura*altura);
@@ -92,8 +90,8 @@ void imc() //Cálculo de IMC
 		default:
 				printf("Opção inválida!");
 			break;
-	}
-	system("Pause");
+	}system("Pause");
+	main();
 }
 
 void med()
@@ -130,40 +128,41 @@ void med()
 		default:
 			printf("Opção inválida!");
 		}system("Pause");
+	main();
 }
 
 int main() //Função principal
 {
 	setlocale(LC_ALL,"Portuguese");
 	int prog=0;
-
-		system("cls");
-		printf("|------------------------------------------|\n");
-		printf("|---Qual programa você deseja usar?--------|\n");
-		printf("|---[1]Calculadora-------------------------|\n");
-		printf("|---[2]Calculo de IMC----------------------|\n");
-		printf("|---[3]Calculo de média da sala------------|\n");
-		printf("|---[4]Fechar------------------------------|\n");
-		printf("|------------------------------------------|\n");
-		printf(":");
-		scanf("%d", &prog);
-    	switch (prog)
-    	{
-    	case 1:
-        	calc();
-        	break;
-		case 2:
-			imc();
-			break;
-		case 3:
-			med();
-			break;
-		case 4:
-			printf("Obrigado por utilizar o meu programinha!!\n");
-			system("Pause");
-			break;
-    	default:
-			printf("Opção inválida!");
-			break;
-    	}
+	char end;
+	system("cls");
+	printf("|------------------------------------------|\n");
+	printf("|---Qual programa você deseja usar?--------|\n");
+	printf("|---[1]Calculadora-------------------------|\n");
+	printf("|---[2]Calculo de IMC----------------------|\n");
+	printf("|---[3]Calculo de média da sala------------|\n");
+	printf("|---[4]Fechar------------------------------|\n");
+	printf("|------------------------------------------|\n");
+	printf(":");
+	scanf("%d", &prog);
+	switch (prog)
+	{
+	case 1:
+     	calc();
+		break;
+	case 2:
+		imc();
+		break;
+	case 3:
+		med();
+		break;
+	case 4:
+		printf("Obrigado por utilizar o meu programinha!!\n");
+		system("Pause");
+		break;
+    default:
+		printf("Opção inválida!");
+		break;
+	}
 }
